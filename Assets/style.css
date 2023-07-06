@@ -1,0 +1,1068 @@
+/* ============================== ***** Teaser Layout CSS File goes Here ***** ========================================== */
+    
+    /* Globle, Color Variables, Typographic Variables, Custom Css & Classes  */
+        *{
+            margin: 0px;
+            padding: 0px; 
+            box-sizing: border-box;
+            text-decoration: none; 
+            list-style: none;
+            border: none; 
+            outline: 0px transparent; 
+        }
+
+        a{
+            font-size: 14px;
+            font-family: var(--Font-Family);
+            display: inline-block;
+        }
+
+        html, body{
+            font-size: 14px;
+            scroll-behavior: smooth;
+            font-family: var(--Font-Family);
+        }
+
+        img{
+            width: 100%;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 400;
+            src: url('/Assets/Fonts/Poppins/Poppins-Regular.ttf');
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-weight: 700;
+            src: url('/Assets/Fonts/Poppins/Poppins-Bold.ttf');
+        }
+
+        :root{
+            --Theme-Primary:  #0f2480;
+            --Theme-Secondry: #3554d1;
+            --Theme-Orange: #f97616;
+            --Theme-Yellow: #f9bc16;
+
+            --Section-tittle: #1a1a1b;
+            --Section-Discription: #3e3e3e;
+            --Sale-card-secondry-text: #424141;
+            --Testimonial-Text-color: #3a3a39;
+            --Top-search-input: #0f24809a;
+            --contact-placeholder: #2a2a2c;
+            --white: #fff;
+            --black: #000;
+
+            /* Font Variables */
+            --Font-Family: 'Poppins';
+        }
+
+        .container{
+            max-width: 100%;
+            margin: 0px auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .Section-Specing{
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .Section-Tittle{
+            font-size: 24px;
+            color: var(--Section-tittle);
+            font-family: var(--Font-Family);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            text-transform: capitalize;
+        }
+        .Section-Tittle::before{
+            content: '';
+            width: 7px;
+            height: 100%;
+            background-color: var(--Theme-Primary);
+            position: absolute; top: 0; left: -12px;
+            display: inline-block;
+        }
+        .Section-Discription{
+            font-size: 14px;
+            font-weight: 400;
+            font-family: var(--Font-Family);
+            color: var(--Section-Discription);
+        }
+
+        .Btn{
+            font-size: 14px;
+            font-weight: 400;
+            font-family: var(--Font-Family);
+            color: var(--Theme-Secondry);
+            display: inline-block;
+            text-transform: uppercase;
+            border-radius: 50px;
+            padding: 7px 25px;
+            z-index: 1;
+            transition: all 0.5s;
+            border: 1px solid var(--Theme-Secondry);
+            position: relative;
+            overflow: hidden;
+        }
+        .Btn-secoundry{
+            color: var(--white);
+            background-color: var(--Theme-Orange);
+        }
+        .Btn::before{
+            content: '';
+            width: 0%; height: 100%;
+            display: inline-block;
+            position: absolute; top: 0; left: 0;
+            background-color: var(--Theme-Secondry);
+            border-radius: 50px;
+            transition: all 0.5s;
+            z-index: -1;
+        }
+        .Btn:hover{
+            color: var(--white);
+        }
+        .Btn:hover::before{
+            width: 100%;
+        }
+
+        .d-flex{
+            display: flex;
+        }
+    /* Globle, Color Variables, Typographic Variables, Custom Css & Classes  */
+
+    /* Hero Section Start*/
+        header{
+            min-height: 100vh;
+            background-image: url('/Assets/Images/Hero&Logo/teaser-psd.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: left;
+            display: flex; align-items: center; justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+        nav{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            align-items: center;
+            justify-content: space-between;
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .Top-logo{
+            width: 50%;
+        }
+        .Top-navigation{
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        .Top-navigation li a{
+            font-size: 16px;
+            color: var(--white);
+            font-family: var(--Font-Family);
+            font-weight: 700;
+            text-transform: capitalize;
+            position: relative;
+        }
+        .Top-navigation li a::before{
+            content: '';
+            display: inline-block;
+            width: 0%; height: 2px;
+            background-color: var(--white);
+            position: absolute; bottom: 0px; left: 0;
+            transition: width 1s;
+        }
+        .Top-navigation li a:hover, .Top-navigation li a:hover:before{ 
+            color: var(--Theme-Yellow);
+            width: 100%;
+        }
+        .SideBar{
+            position: absolute; top: 0; right: -100%;
+            width: 100%; height: 100vh;
+            background: rgba(0, 0, 0, 0.7);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+            display: flex; align-items: center; justify-content: center;
+            transition: right 1s;
+            z-index: 999;
+        }
+        .Active-SideBar{
+            right: 0;
+        }
+        .fa-xmark{
+            font-size: 24px;
+            position: absolute;
+            top: 15px; right: 15px;
+            cursor: pointer;
+            color: var(--white);
+        }
+        #SideBar ul li{
+            margin-bottom: 20px;
+        }
+        #SideBar a{
+            font-size: 28px;
+            color: var(--white);
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+        #SideBar a:hover{
+            color: var(--Theme-Secondry);
+        }
+
+        /* Hero Content Start */
+            hgroup{
+                position: absolute;
+                top: 50%; left: 0;
+                transform: translateY(-50%);
+            }
+            .Hero-Tittle{
+                font-size: 32px;
+                color: var(--Theme-Secondry);
+                text-transform: capitalize;
+            }
+            .Hero-Discription{
+                font-size: 16px;
+                font-weight: 400;
+                font-family: var(--Font-Family);
+                color: var(--black);
+                margin: 15px 0px 25px 0px;
+            }
+            .Theme-Text{
+                color: var(--Theme-Primary);
+            }
+        /* Hero Content End */
+        /* Search Box Wrapper Start */
+            .Search-box-wrapper{
+                    width: 90%;
+                    padding: 25px;
+                    background-color: var(--white);
+                    margin: 0px auto 25px auto;
+                    position: absolute;
+                    bottom: -120px; left: 50%;
+                    transform: translateX(-50%);
+                    filter: drop-shadow(0px 10px 53px rgba(14,14,13,0.13));
+            }
+            .Search-box-wrapper form{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    gap: 15px;
+            }
+            .Search-box-wrapper form input{
+                    color: var(--Top-search-input);
+                    font-size: 14px;
+                    padding: 10px;
+                    text-transform: capitalize;
+                    border: 0.40px solid var(--Top-search-input);
+            }
+            .Search-box-wrapper form input::placeholder{
+                    color: var(--Top-search-input);
+                    font-family: var(--Font-Family);
+            }
+            .Search-box-wrapper form .Btn{
+                    color: var(--white);
+                    border-radius: 0px;
+                    text-transform: uppercase;
+                    text-align: center;
+                    background-color: var(--Theme-Orange);
+                    border: 0px solid transparent;
+            }
+            .Search-box-wrapper form .Btn:hover{
+                background-color: var(--Theme-Yellow);
+            }
+            .Search-box-wrapper form .Btn:hover::before{
+                    width: 0;
+            }
+        /* Search Box Wrapper End */
+    /* Hero Section End */
+
+    /* About Section Start */
+        .About-Wrapper{
+            display: flex;
+            flex-direction: column;
+            margin-top: 120px;
+        }
+        .About-Content{
+            padding: 20px 10px 10px 10px;
+        }
+        .Section-Discription{
+            margin: 10px 0 20px 0px;
+        }
+    /* About Section End */
+
+    /* House for Sale */
+        .House-Sale-Wrapper, .Pricing-Wrapper{
+            text-align: center;
+        }
+        .Sale-Card-Wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .Sale-Card-Wrapper a{
+            width: 100%;
+            display: inline-block;
+            color: var(--black);
+        }
+        .Sale-Card-Wrapper h4{
+            font-size: 18px;
+            font-weight: 900;
+        }
+        .Sale-Card-Wrapper p{
+            font-weight: 400;
+            color: var(--Sale-card-secondry-text);
+        }
+        .Sale-Card-Wrapper a:hover .card-title,
+        .Sale-Card-Wrapper a:hover.card-text {
+            color: var(--Theme-Secondry);
+        }
+        .House-Sale-Wrapper .Btn{
+            margin-top: 25px;
+        }
+    /* House for Sale */
+
+    /* Our Pricing Start */
+        .Pricing-Card-Wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .Pricing-Card{
+            color: var(--white);
+            cursor: pointer;
+        }
+        .Pricing-Card-Header{
+            color: var(--white);
+            padding: 20px;
+            background-color: var(--Theme-Primary);
+        }
+        .Pricing-Card-Header .Pricing-Card-Header-Tittle{
+            font-size: 34px;
+            line-height: 26px;
+            text-transform: uppercase;
+        }
+        .Pricing-Card-Header-Tittle span{
+            font-size: 16px;
+        }
+        .Pricing-Card-Body{
+            background-color: var(--Theme-Secondry);
+            padding: 30px 40px 25px;
+        }
+        .Pricing-Card:hover .Pricing-Card-Body{
+            background-color: var(--Theme-Yellow);
+        }
+        .Pricing-Card-Body-Tittle{
+            font-size: 32px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .Pricing-Card-Body-Tittle::before{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 4px;
+            background-color: var(--white);
+            border-radius: 5px;
+        }
+        .Price-Card-List{
+            margin-top: 20px;
+        }
+        .Price-Card-List li{
+            margin-bottom: 10px;
+        }
+        .Pricing-Card .Btn{
+            font-size: 14px;
+            color: var(--white);
+            margin-top: 20px;
+            background-color: var(--Theme-Primary);
+            font-family: var(--Font-Family);
+            font-weight: 400;
+            border: transparent;
+        }
+        .Pricing-Card .Btn::before{
+            background-color: var(--Theme-Yellow);
+        }
+    /* Our Pricing End */
+
+    /* Good Deal Start Here */
+        .Good-deal-Wrapper{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .Good_deal-Content{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    /* Good Deal End Here */
+
+    /* Jumbotron */
+        .Jumbotron{
+            color: var(--white);
+            background-color: var(--Theme-Primary);
+            text-align: center;
+            padding: 40px 0px 20px;
+        }
+        .Jumbotron .Section-Tittle{
+            color: var(--white);
+        }
+        .Jumbotron .Section-Tittle::before{
+            height: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--white);
+        }
+        .Jumbotron-Content-Wrapper{
+            padding-top: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .Jumbotron-Item{
+            width: 130px;
+        }
+        .Jumbotron-Tittle{
+            font-size: 24px;
+            line-height: 24px;
+            margin-top: 15px;
+            text-transform: capitalize;
+            font-weight: 700;
+        }
+        .Jumbotron-Tittle span{
+            font-size: 16px;
+        }
+        .Jumbotron-Item .fa-calendar-days, .fa-hand-holding-droplet, .fa-user-tie, .fa-sack-dollar{
+            font-size: 32px;
+        }
+        .Jumbotron .Btn{
+            color: var(--black);
+            background-color: var(--white);
+            margin-top: 40px;
+        }
+        .Jumbotron .Btn:hover{
+            color: var(--white);
+        }
+    /* Jumbotron End */
+
+    /* Testimonial */
+        .Testimonial{
+            text-align: center;
+            padding: unset 40px;
+        }
+        .Testimonial .Section-Tittle{
+            text-align: left;
+            padding-left: 20px;
+        }
+        .Testimonial .Section-Tittle::before{
+            left: 0px;
+        }
+        .Testimonial-Slider-Wrapper{
+            border: 1px solid var(--Top-search-input);
+            padding: 40px 20px;
+            margin-top: 30px;
+        }
+        .Testimonila-Card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .Testimonial-Image-Wrapper{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .Testimonial-Image-Wrapper:before{
+            content: '';
+            display: inline-block;
+            width: 50px; height: 180px;
+            background-color: var(--Theme-Primary);
+            z-index: -1;
+        }
+        
+        .slick-slide img {
+            display: inline-block;
+        }
+        .Testimonial-Image{
+            width: 50%;
+            margin-left: -20px;
+        }
+        
+        .Testimonial-Content{
+            margin-top: 40px;
+        }
+        .Testimonial-Tittle{
+            font-size: 20px;
+            display: inline-block;
+            position: relative;
+            text-transform: capitalize;
+            color: var(--Testimonial-Text-color);
+        }
+        .Testimonial-Tittle::before{
+            content: '';
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            transform: translateY(-50%);
+            width: 40px; height: 5px;
+            background-color: var(--Theme-Primary);
+        }
+        .Testimonial-Secondry-text{
+            color: var(--Testimonial-Text-color);
+        }
+        .prev-arrows, .next-arrows{
+            font-size: 18px;
+            color: var(--white);
+            width: 30px; height: 30px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background-color: var(--Theme-Primary);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        } 
+        .prev-arrows{
+            left: -10px;
+            z-index: 999;
+        }
+        .next-arrows{
+            right: -10px;
+        }
+    /* Testimonial End */
+    
+    /* Contact */
+        .Contact-Form{
+            text-align: center;
+            padding-bottom: 0 !important;
+        }
+        .Contact-Form .Section-Tittle{
+            margin-bottom: 20px;
+        }
+        .Contact-Form iframe{
+            width: 100%;
+        }
+        .Contact-Outter{
+            background-color: var(--Theme-Primary);
+        }
+        .Contact-Form-Wrapper{
+            padding: 15px 10px 10px 10px;
+        }
+        .Contact-Form-Wrapper input{
+            margin-bottom: 15px;
+        }
+        .Contact-Form-Wrapper input, textarea{
+            width: 100%;
+            font-size: 14px;
+            font-weight: 400;
+            font-family: var(--Font-Family);
+            text-transform: capitalize;
+            padding: 10px;
+        }
+        .Contact-Form-Wrapper ::placeholder{
+            font-family: var(--Font-Family);
+            font-weight: 400;
+            color: var(--contact-placeholder);
+            text-transform: capitalize;
+        }
+        .Contact-Outter{
+            display: flex;
+            flex-direction: column;
+        }
+        [type="submit"]{
+            margin-top: 20px;
+            padding-left: 40px;
+            padding-right: 40px;
+            cursor: pointer;
+        }
+    /* Contact End */
+    
+    /* Footer */
+        footer{
+            color: var(--white);
+            background-color: var(--Theme-Primary);
+        }
+        footer.Section-Specing{
+            padding-bottom: 15px;
+        }
+        .Footer-Wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .Footer-Tittle{
+            font-size: 24px;
+            font-weight: 400;
+            text-transform: capitalize;
+            margin-bottom: 5px;
+        }
+        .Footer-item a{
+            color: var(--white);
+        }
+        .About-link li{
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .About-link .icon{
+            margin-right: 5px;
+        }
+        .About-link a:hover,
+        .Footer-item a:hover,
+        .Social-Media a:hover{
+            color: var(--Theme-Orange);
+        }
+        .newsletter input{
+            font-size: 14px;
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 10px;
+            font-family: var(--Font-Family);
+            font-weight: 400;
+        }
+        .Social-Media{
+            display: flex;
+            gap: 10px;
+            margin: 10px 0px 15px 0px;
+        }
+        .Social-Media a{
+            font-size: 20px;
+        }
+        .newsletter .Btn{
+            border-radius: 0px;
+        }
+        hr{
+            width: 90%;
+            height: 1px;
+            margin: 0px auto 15px auto;
+            background-color: white;
+        }
+        .copywright{
+            font-weight: 400;
+            text-align: center;
+        }
+
+    /* Footer End */
+
+
+
+
+    /* Media Quries Start Here */
+        @media screen and (min-width:576px) {
+            /* House for Sale */
+                .Sale-Card-Wrapper{
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    gap: 20px;
+                }
+                .Sale-Card-Wrapper a{
+                    width: 45vw;
+                }  
+            /* House for Sale */
+            
+            /* Our Pricing */
+                .Pricing-Card-Wrapper{
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    gap: 25px;
+                    margin-top: 40px;
+                }
+                .Pricing-Card-Body{
+                    padding: 30px 60px;
+                }
+            /* Our Pricing */
+
+            /* Good Deal */
+                .Good_deal-Banner{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10px;
+                }
+                .Good_deal-Banner img{
+                    width: 50%;
+                }
+            /* Good Deal End */
+
+            /* Jumbotron */
+                .Jumbotron-Content-Wrapper{
+                    padding: 40px 0px;
+                }
+                .Jumbotron-Item{
+                    width: 100px;
+                }
+                .Jumbotron .Btn{
+                    margin-top: 25px;
+                }
+            /* Jumbotron End */
+
+            /* Testimonial */
+                /* .Section-Tittle::before */
+                .Testimonila-Card{
+                    display: flex !important;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 30px;
+                    text-align: left;
+                }
+                .Testimonial-Image{
+                    width: 100%;
+                }
+                .Testimonial-Content{
+                    width: 50%;
+                    margin-top: 0;
+                }
+            /* Testimonial */
+
+            /* Footer */
+                .Footer-Wrapper{
+                    justify-content: space-evenly;
+                }
+                .info{
+                    width: 200px;
+                }
+                .Footer-item{
+                    width: 250px;
+                }
+                .newsletter input{
+                    width: 100%;
+                    display: block;
+                }
+                .copywright-break{
+                    display: none;
+                }
+            /* Footer End */
+        }
+
+        @media screen and (min-width:768px) {
+            .Section-Specing{
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+            .Section-Tittle{
+                font-size: 28px;
+            }
+            .Section-Discription{
+                font-size: 16px;
+            }
+
+            /* Hero Section */
+                 header{
+                    background-position: right;
+                }
+                .Top-logo{
+                    width: 75%;
+                }
+                .Hero-Tittle{
+                    font-size: 48px;
+                }
+                .Hero-Discription{
+                    width: 60%;
+                    margin: 15px 0px 40px 0px;
+                }
+                .Search-box-wrapper{
+                    bottom: -70px;
+                }
+                .Search-box-wrapper form{
+                    flex-direction: row;
+                    justify-content: space-between;
+               }
+               .Search-box-wrapper form input{
+                    width: 40%;
+               }
+            /* Hero Section */
+
+            /* About Section Start */
+                .About-Wrapper{
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    margin-top: 70px;
+                    gap: 15px;
+                }
+                .About-Content{
+                    width: 80%;
+                }
+            /* About Section End */
+
+            /* House for Sale Section Start */
+                .Sale-Card-Wrapper{
+                    margin-top: 35px;
+                }
+                .Sale-Card-Wrapper a{
+                    width: 46vw;
+                }
+            /* House for Sale Section End */
+
+            /* Our Pricing */
+                .Pricing-Card-Wrapper{
+                    flex-wrap: nowrap;
+                }
+                .Pricing-Card-Body{
+                    padding: 30px 40px;
+                }
+            /* Our Pricing */
+
+            /* Good Deal Start Here */
+                .Good-deal-Wrapper{
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-around;
+                    gap: 20px;
+                }
+                .Good_deal-Content{
+                    width: 80%;
+                }
+            /* Good Deal End Here */
+            
+            /* Jumbotron */
+                .Jumbotron.Section-Specing{
+                    padding-bottom: 30px;
+                }
+                .Jumbotron-Content-Wrapper{
+                    justify-content: space-evenly;
+                    padding-bottom: 25px;
+                }
+                .Jumbotron-Item{
+                    width: unset;
+                }
+                .Jumbotron .Btn{
+                    margin-top: 15px;
+                }
+                .Jumbo-Tittle-Break{
+                    display: none;
+                }
+            /* Jumbotron End */
+
+            /* Testimonial */
+                .Testimonial-Slider-Wrapper{
+                    width: 80%;
+                    margin: 30px auto 0 auto;
+                }
+                .prev-arrows{
+                    left: 0px;
+                }
+                .next-arrows{
+                    right: 0px;
+                }
+            /* Testimonial */
+
+            /* Contact */
+                .Contact-Outter{
+                    flex-direction: row;
+                }
+                .Contact-Form-Wrapper{
+                    padding: 30px 10px;
+                }
+            /* Contact End */
+
+        }
+
+        @media screen and (min-width: 1024px) {
+            .container{
+                padding-left: 60px;
+                padding-right: 60px;
+            }
+            .Section-Specing{
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            .Section-Tittle{
+                font-size: 34px;
+            }
+            
+            /* Hero Section */
+                nav{
+                    background-color: transparent;
+                }
+                .fa-xmark{
+                    top: 20px;
+                    right: 60px;
+                }
+                .Top-navigation{
+                    gap: 30px;
+                }
+                .Hero-Tittle{
+                    font-size: 58px;
+                }
+            /* Hero Section */
+
+            /* About Section Start */
+                .About-Wrapper{
+                    gap: 50px;
+                }
+            /* About Section End */
+
+            /* House for Sale Section Start */
+                .Sale-Card-Wrapper a{
+                    width: 43vw;
+                }
+                .Sale-Card-Wrapper h4{
+                    font-size: 20px;
+                }
+                .House-Sale-Wrapper .Btn{
+                    margin-top: 45px;
+                }
+            /* House for Sale Section End */
+
+            /* Our Pricing */
+                .Pricing-Card-Wrapper{
+                    justify-content: center;
+                    gap: 20px;
+                }
+                .Pricing-Card-Body{
+                    padding: 40px 60px 25px;
+                }
+            /* Our Pricing */
+            
+            /* Jumbotron */
+                .Jumbotron{
+                    padding-bottom: 25px;
+                }
+            /* Jumbotron End */
+
+            /* Contact */
+            .Contact-Form iframe{
+                width: 50%;
+            }
+            .Contact-Outter{
+                gap: 15px;
+            }
+            .Contact-Form-Wrapper{
+                width: 35%;
+            }
+            .Contact-Form-Wrapper form{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .Contact-Form input, textarea{
+                width: 100%;
+            }
+            .Contact-Form-Wrapper [type="submit"]{
+                align-self: flex-end;
+            }
+            /* Contact End */
+
+            /* Footer */
+                .Footer-item{
+                    width: 200px;
+                }
+            /* Footer */
+
+        }
+
+        @media screen and (min-width: 1280px) {
+            .Section-Tittle{
+                font-size: 40px;
+            }
+
+            /* Hero Section */
+                header{
+                    background-size: contain;
+                    background-position: right;
+                }   
+                hgroup{
+                    padding-left: 125px !important;
+                }
+                .Top-logo{
+                    width: 100%;
+                }
+                .Hero-Tittle{
+                    font-size: 70px;
+                }
+                .Hero-Discription{
+                    width: 80%;
+                    margin: 10px 0px 30px 0px;
+                }
+                .Search-box-wrapper form input{
+                    width: 43%;
+               }
+               .Search-box-wrapper form .Btn{
+                    padding: 7px 30px;
+               }
+            /* Hero Section */
+
+            /* About Section Start */
+                .About-Wrapper{
+                    width: 85%;
+                    margin-top: 90px;
+                }
+                .About-Content{
+                    width: 62%;
+                }
+                .About-Content .Section-Discription{
+                    width: 70%;
+                }
+            /* About Section End */
+
+            /* Good Deal */
+                .Good-deal-Wrapper{
+                    width: 85%;
+                    gap: 0;
+                    padding-bottom:100px;
+                }
+                .Good_deal-Content .Section-Discription{
+                    width: 95%;
+                }
+            /* Good Deal */
+
+            /* Testimonial */
+                .Testimonial-Image{
+                    width: 100%;
+                }
+                .Testimonial-Content{
+                    width: 65%;
+                }
+                .prev-arrows{
+                    left: 15px;
+                }
+                .next-arrows{
+                    right: 15px;
+                }
+            /* Testimonial */
+
+            /* Footer */
+                .Footer-Wrapper{
+                    justify-content: center;
+                    gap: 70px;
+                }
+                footer.Section-Specing{
+                    padding-top: 60px;
+                }
+                .Footer-item{
+                    width: 250px;
+                }
+                .newsletter input{
+                    width: 85%;
+                }
+                hr{
+                    width: 55%;
+                }
+            /* Footer */
+        }
+
+        @media screen and (min-width: 1440px) {
+            .Sale-Card-Wrapper a{
+                width: 29.3vw;
+            }
+        }
+
+    /* Media Quries Start Here */
+
+/* ============================== ***** Teaser Layout CSS File End Here ***** ========================================== */
